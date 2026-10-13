@@ -24,11 +24,17 @@ ul {
   .container {
     width: 750px;
   }
+  .main > span {
+    font-size: 100px;
+  }
 }
 /* Medium */
 @media (min-width: 992px) {
   .container {
     width: 970px;
+  }
+  .main > span {
+    font-size: 50px;
   }
 }
 /* Large */
