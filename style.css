@@ -417,6 +417,55 @@ section {
     gap: 10px;
     padding: 15px;
   }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 60px 15px;
+    }
+
+    .main {
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    .main h2 span {
+      font-size: 2.2em;
+    }
+
+    .main h3 {
+      font-size: 1.5em;
+    }
+
+    header {
+      padding: 10px 15px;
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .navigation a {
+      padding: 0 8px;
+      font-size: 0.9em;
+    }
+
+    .card,
+    .about-card,
+    .project-card {
+      width: 100% !important;
+      margin: 10px 0;
+    }
+
+    .footer {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+      padding: 1.5em 15px;
+    }
+  }
   .navigation a {
     padding: 0 10px;
   }
