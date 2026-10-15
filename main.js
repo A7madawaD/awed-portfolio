@@ -66,13 +66,13 @@ scrollTopBtn.style.cssText = `
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #3a6cf4;
-    color: white;
+    background-color: #3af4c6;
+    color: #000000;
     border: none;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 1.2em;
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     justify-content: center;
