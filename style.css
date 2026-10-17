@@ -250,6 +250,12 @@ section {
   width: 45em;
   max-width: 100%;
 }
+/* ضبط النصوص العربية لتظهر بشكل صحيح (من اليمين لليسار) */
+.card p,
+.info p {
+  direction: rtl;
+  text-align: right;
+}
 
 .skills-tags {
   display: flex;
