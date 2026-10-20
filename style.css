@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 
+/* إرجاع المحدد العام الصحيح (*) */
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -30,7 +31,6 @@ header {
 }
 
 /* --- تنسيق اللوجو المتحرك (AD Logo) --- */
-/* --- تنسيق اللوجو المتحرك (AD Logo) --- */
 .logo-container {
   display: flex;
   align-items: center;
@@ -50,7 +50,6 @@ header {
 
 .letter-a {
   color: #3a6cf4;
-  /* حركة الدخول أولاً، ثم الحركة الدورية المستمرة كل 3 ثواني */
   animation:
     mergeLetterA 1s ease-out forwards,
     pulseLetterA 3s ease-in-out 1s infinite;
@@ -58,13 +57,11 @@ header {
 
 .letter-d {
   color: #111111;
-  /* حركة الدخول أولاً بتأخير بسيط، ثم الحركة الدورية المتناسقة */
   animation:
     mergeLetterD 1s ease-out 0.2s forwards,
     pulseLetterD 3s ease-in-out 1s infinite;
 }
 
-/* حركة الاندماج الأولية عند فتح الموقع */
 @keyframes mergeLetterA {
   0% {
     opacity: 0;
@@ -87,7 +84,6 @@ header {
   }
 }
 
-/* الحركة الدورية (تتكرر كل 3 ثواني بشكل كلاسيكي وديمناميكي) */
 @keyframes pulseLetterA {
   0%,
   100% {
@@ -131,21 +127,24 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 100px;
+  padding: 140px 100px 50px;
 }
 
 .main h2 {
   color: #3a6cf4;
   font-size: 1.7em;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .main h2 span {
   display: block;
+  min-height: 1.2em;
   margin-top: 10px;
   color: #ffffff;
   font-size: 3em;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .main h3 {
@@ -154,7 +153,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 30px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .main-btn {
@@ -180,7 +179,13 @@ section {
   color: #ffffff;
   font-size: 1.7em;
   padding-right: 30px;
+  text-decoration: none;
+  display: inline-block;
   transition: 0.3s ease;
+}
+
+.social-icons a i {
+  text-decoration: none !important;
 }
 
 .social-icons a:hover {
@@ -250,7 +255,8 @@ section {
   width: 45em;
   max-width: 100%;
 }
-/* ضبط النصوص العربية لتظهر بشكل صحيح (من اليمين لليسار) */
+
+/* ضبط النصوص العربية لتظهر بشكل صحيح */
 .card p,
 .info p {
   direction: rtl;
@@ -412,7 +418,7 @@ section {
     padding: 80px 30px;
   }
   .main {
-    padding: 0 30px;
+    padding: 120px 30px 40px;
   }
   .footer {
     padding: 2em 30px;
@@ -424,62 +430,70 @@ section {
     flex-direction: column;
     gap: 10px;
     padding: 15px;
+    position: fixed;
   }
 
-  @media (max-width: 480px) {
-    section {
-      padding: 60px 15px;
-    }
-
-    .main {
-      padding: 0 15px;
-      text-align: center;
-    }
-
-    .main h2 span {
-      font-size: 2.2em;
-    }
-
-    .main h3 {
-      font-size: 1.5em;
-    }
-
-    header {
-      padding: 10px 15px;
-    }
-
-    .navigation {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
-    }
-
-    .navigation a {
-      padding: 0 8px;
-      font-size: 0.9em;
-    }
-
-    .card,
-    .about-card,
-    .project-card {
-      width: 100% !important;
-      margin: 10px 0;
-    }
-
-    .footer {
-      flex-direction: column;
-      gap: 15px;
-      text-align: center;
-      padding: 1.5em 15px;
-    }
-  }
   .navigation a {
     padding: 0 10px;
   }
+
+  .main {
+    padding: 160px 20px 40px;
+    text-align: center;
+    align-items: flex-start;
+  }
+
   .footer {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 60px 15px;
+  }
+
+  .main {
+    padding: 150px 15px 30px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .main h2 span {
+    font-size: 2.2em;
+    min-height: 2.5em;
+  }
+
+  .main h3 {
+    font-size: 1.5em;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .navigation a {
+    padding: 0 8px;
+    font-size: 0.9em;
+  }
+
+  .card,
+  .about-card,
+  .project-card {
+    width: 100% !important;
+    margin: 10px 0;
+  }
+
+  .footer {
+    padding: 1.5em 15px;
   }
 }
