@@ -12,7 +12,29 @@ window.addEventListener("scroll", () => {
     header.style.padding = "15px 100px";
   }
 });
+const scroller = document.querySelector(".scroller");
+let ticking = false;
 
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrollTop = document.documentElement.scrollTop;
+
+      if (scrollHeight > 0) {
+        scroller.style.width = `${(scrollTop / scrollHeight) * 100}%`;
+      } else {
+        scroller.style.width = "0%";
+      }
+
+      ticking = false; // إعادة تعيين العلم ليسمح بالتحديث القادم
+    });
+
+    ticking = true;
+  }
+});
 // ==========================================
 // 2. Typing Effect for Frontend Developer
 // ==========================================
@@ -70,9 +92,9 @@ scrollTopBtn.style.cssText = `
     color: #000000;
     border: none;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
     cursor: pointer;
     display: flex;
     justify-content: center;

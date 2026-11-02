@@ -13,7 +13,16 @@ body {
   background-color: #0b0c10;
   color: #ffffff;
 }
-
+.scroller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #705ac9, #0d0d0e); /* تدرج لوني مميز */
+  width: 0%;
+  z-index: 99999;
+  transition: width 0.1s ease-out; /* إضافة انسيابية في امتلاء الشريط */
+}
 /* Header & AD Logo Animation */
 header {
   background-color: #f0f0f0;
